@@ -1,0 +1,7 @@
+const User = require("../models/ISDABI User");
+const allowed = (role) => role === "analyst" || role === "sales_representative";
+const serialize = (u) => ({ id:String(u._id), name:u.name, email:u.email, role:u.role, authProvider:u.authProvider, isActive:u.isActive !== false, lastLoginAt:u.lastLoginAt || null, createdAt:u.createdAt || null });
+async function listUsers(req,res){ const role=req.params.role; if(!allowed(role)) return res.status(400).json({success:false,message:"Invalid managed role."}); const users=await User.find({role}).select("-passwordHash").sort({createdAt:-1}).lean(); res.json({success:true,users:users.map(serialize)}); }
+async function updateUserStatus(req,res){ const u=await User.findById(req.params.id); if(!u || !allowed(u.role)) return res.status(404).json({success:false,message:"Managed user not found."}); if(typeof req.body.isActive!=="boolean") return res.status(400).json({success:false,message:"isActive must be boolean."}); u.isActive=req.body.isActive; await u.save(); res.json({success:true,user:serialize(u)}); }
+async function deleteUser(req,res){ const u=await User.findById(req.params.id); if(!u || !allowed(u.role)) return res.status(404).json({success:false,message:"Managed user not found."}); await u.deleteOne(); res.json({success:true,message:"User deleted."}); }
+module.exports={listUsers,updateUserStatus,deleteUser};

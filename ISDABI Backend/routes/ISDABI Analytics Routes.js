@@ -1,0 +1,1 @@
+const express=require("express");const {protect}=require("../middleware/ISDABI Auth Middleware");const {getAnalytics}=require("../controllers/ISDABI Analytics Controller");const router=express.Router();router.use(protect);router.get("/",getAnalytics);module.exports=router;

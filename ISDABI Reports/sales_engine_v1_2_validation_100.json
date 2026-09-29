@@ -1,0 +1,113 @@
+{
+  "validation_version": "V1.2.1",
+  "conversations_analyzed": 100,
+  "actual_dataset_outcomes": {
+    "FAILURE": 70,
+    "SUCCESS": 30
+  },
+  "customer_intent": {
+    "Information seeking": 18,
+    "Moderate purchase intent": 35,
+    "Low purchase intent": 17,
+    "Very high purchase intent": 23,
+    "High purchase intent": 5,
+    "Potential purchase interest": 2
+  },
+  "customer_sentiment": {
+    "Concerned": 81,
+    "Negative": 13,
+    "Positive": 4,
+    "Neutral": 2
+  },
+  "engagement": {
+    "High": 33,
+    "Medium": 62,
+    "Low": 5
+  },
+  "buying_signals": {
+    "price_evaluation": 41,
+    "trial_interest": 38,
+    "membership_interest": 33,
+    "purchase_interest": 11,
+    "commitment": 23
+  },
+  "objections": {
+    "commitment_objection": 43,
+    "uncertainty": 67,
+    "price_objection": 18,
+    "cancellation_concern": 16,
+    "time_objection": 3
+  },
+  "objection_handling": {
+    "Handled": 66,
+    "Partially handled": 11,
+    "Not handled": 7,
+    "No clear objection detected": 16
+  },
+  "decision_points": {
+    "Hesitation": 69,
+    "Ready to buy": 23,
+    "Information gathering": 8
+  },
+  "analysis_by_actual_outcome": {
+    "FAILURE": {
+      "intent": {
+        "Information seeking": 18,
+        "Moderate purchase intent": 31,
+        "Low purchase intent": 17,
+        "Potential purchase interest": 2,
+        "Very high purchase intent": 1,
+        "High purchase intent": 1
+      },
+      "sentiment": {
+        "Concerned": 62,
+        "Negative": 8
+      },
+      "engagement": {
+        "High": 27,
+        "Medium": 40,
+        "Low": 3
+      },
+      "decision_point": {
+        "Hesitation": 68,
+        "Information gathering": 1,
+        "Ready to buy": 1
+      },
+      "objection_handling": {
+        "Handled": 45,
+        "Partially handled": 8,
+        "Not handled": 5,
+        "No clear objection detected": 12
+      }
+    },
+    "SUCCESS": {
+      "intent": {
+        "Very high purchase intent": 22,
+        "High purchase intent": 4,
+        "Moderate purchase intent": 4
+      },
+      "sentiment": {
+        "Concerned": 19,
+        "Negative": 5,
+        "Positive": 4,
+        "Neutral": 2
+      },
+      "engagement": {
+        "Low": 2,
+        "Medium": 22,
+        "High": 6
+      },
+      "decision_point": {
+        "Ready to buy": 22,
+        "Information gathering": 7,
+        "Hesitation": 1
+      },
+      "objection_handling": {
+        "Handled": 21,
+        "Partially handled": 3,
+        "No clear objection detected": 4,
+        "Not handled": 2
+      }
+    }
+  }
+}

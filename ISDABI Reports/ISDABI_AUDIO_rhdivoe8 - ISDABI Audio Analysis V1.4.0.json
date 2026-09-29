@@ -1,0 +1,50 @@
+{
+  "project": "ISDABI",
+  "pipeline": "Audio -> Faster-Whisper -> MiniLM -> Evidence -> Qwen -> Grounding",
+  "pipeline_version": "V1.4.0",
+  "audio_file": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI AI ML\\temp_uploads\\ISDABI_AUDIO_rhdivoe8.wav",
+  "speech_to_text": {
+    "model": "Faster-Whisper Small",
+    "language": "en",
+    "transcript": "Hi, this is Maria Rodriguez.\nI'm having trouble with my LAP2110 laptop,\norder number 987654.\nThe wifi key's disconnecting\nand I can't get a stable internet connection.\nI've tried restarting it multiple times\nand I've checked my router\nbut everything else is working fine.\nThis is incredibly frustrating.\nI need this for work.\nCan you please help me troubleshoot this?"
+  },
+  "miniLM": {
+    "predicted_outcome": "SUCCESS",
+    "success_probability": 0.7998,
+    "failure_probability": 0.2002,
+    "customer_intent": "Product information / evaluation",
+    "buying_signals": [
+      "purchase_interest",
+      "product_specification_interest"
+    ],
+    "objections": []
+  },
+  "evidence": {
+    "product_reference": "LAP2110",
+    "product_description": "laptop",
+    "information_topics": [
+      "specifications"
+    ]
+  },
+  "qwen": {
+    "status": "QWEN_FORMATTED_GROUNDED",
+    "model": "Qwen2.5-0.5B-Instruct Q4_K_M"
+  },
+  "qwen_manager_report": {
+    "sales_outcome": "SUCCESS",
+    "customer_situation": "Customer is asking about the LAP2110 laptop, specifically regarding product specifications.",
+    "key_buying_signals": [
+      "purchase_interest",
+      "product_specification_interest"
+    ],
+    "main_objections": [],
+    "what_went_well": [
+      "Customer asked for specific product specifications or features.",
+      "Customer expressed purchase-related interest."
+    ],
+    "what_needs_improvement": [],
+    "recommended_follow_up": [
+      "Follow up by addressing the customer's stated product questions."
+    ]
+  }
+}

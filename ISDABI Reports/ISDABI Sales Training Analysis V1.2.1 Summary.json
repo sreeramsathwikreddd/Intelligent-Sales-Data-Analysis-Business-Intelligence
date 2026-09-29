@@ -1,0 +1,47 @@
+{
+  "analysis_version": "V1.2.1",
+  "total_training_records": 9598,
+  "completed_conversations": 9598,
+  "processed_this_run": 9598,
+  "skipped_existing": 0,
+  "errors_this_run": 0,
+  "remaining_conversations": 0,
+  "elapsed_seconds_this_run": 839.6,
+  "output_file": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI Reports\\ISDABI Sales Training Analysis V1.2.1.jsonl",
+  "analysis_policy": {
+    "speaker_roles": "Uses explicit sales/customer roles.",
+    "outcome_leakage": "SUCCESS/FAILURE is retained only as ground truth.",
+    "decision_turn_index": "Not used as an inference input.",
+    "persona_mood_demographic": "Not used as transcript inference inputs.",
+    "model": "Local MiniLM-L12-H384-uncased",
+    "embedding_dimension": 384
+  },
+  "outcome_counts_this_run": {
+    "FAILURE": 6970,
+    "SUCCESS": 2628
+  },
+  "intent_counts_this_run": {
+    "Information seeking": 1465,
+    "Moderate purchase intent": 3003,
+    "Low purchase intent": 2299,
+    "Very high purchase intent": 1785,
+    "High purchase intent": 966,
+    "Potential purchase interest": 80
+  },
+  "sentiment_counts_this_run": {
+    "Concerned": 7918,
+    "Negative": 1185,
+    "Positive": 373,
+    "Neutral": 122
+  },
+  "engagement_counts_this_run": {
+    "High": 2397,
+    "Medium": 6656,
+    "Low": 545
+  },
+  "decision_point_counts_this_run": {
+    "Hesitation": 6842,
+    "Ready to buy": 1752,
+    "Information gathering": 1004
+  }
+}

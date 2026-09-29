@@ -1,0 +1,10 @@
+const express=require("express");
+const router=express.Router();
+const {protect}=require("../middleware/ISDABI Auth Middleware");
+const {listUsers,updateUserStatus,deleteUser}=require("../controllers/ISDABI User Management Controller");
+const headOnly=(req,res,next)=>req.user?.role==="head_analyst"?next():res.status(403).json({success:false,message:"Head Analyst access required."});
+router.use(protect,headOnly);
+router.get("/:role",listUsers);
+router.patch("/:id/status",updateUserStatus);
+router.delete("/:id",deleteUser);
+module.exports=router;

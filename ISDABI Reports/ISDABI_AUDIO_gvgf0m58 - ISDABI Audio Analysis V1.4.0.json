@@ -1,0 +1,47 @@
+{
+  "project": "ISDABI",
+  "pipeline": "Audio -> Faster-Whisper -> MiniLM -> Evidence -> Qwen -> Grounding",
+  "pipeline_version": "V1.4.0",
+  "audio_file": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI AI ML\\temp_uploads\\ISDABI_AUDIO_gvgf0m58.mp3",
+  "speech_to_text": {
+    "model": "Faster-Whisper Small",
+    "language": "en",
+    "transcript": "Hello, my name is Anthony, my name is Jeff and I'm calling on behalf of education experts\nfrom a quality monitor line and I see here that Theresa fulfilled the form on the internet\nindicating an interest in earning a degree.\nYes.\nIs that correct?\nYes.\nI only need a few moments of her time to match you to the most appropriate schools.\nAre you at least 18 years of age?\nYeah, I'm 29.\n29, okay.\nAnd do you currently have a high school diploma or a GED?\nYes, I do.\nOkay, thank you Anthony.\nAnd if we can find a school for you that meets your needs, would you be interested in it\nfurther in your education in the next experiment?\nYeah, of course.\nThe course I'd like to take up would be computer engineering.\nComputer engineering, okay.\nAnd Anthony, I only need a few moments of your time.\nOkay.\nOkay, to verify your information, your first name's Anthony and your last name is Bella.\nIs this correct?\nYes.\nOkay.\nAnthony, now if I may ask, if we can find a school for you that meets your needs,\nwould you be interested in furthering your education in the next experiment?\nDefinitely.\nThank you Anthony.\nOkay, could you please verify your complete address including the city, state and the zip code?\nAlright, it's 1905 Bramblewood Drive, St. Cloud, Florida 3476.\nStreet number 1905?\nYeah, 1905.\nAnd the street name is Bramblewood Drive?\nYep.\nIs that correct?\nThat's correct.\nOkay, so it's 1905 Bramblewood Drive, St. Cloud, Florida 34769.\nIs that correct?\nYep.\nOkay.\nAnd could you please verify your email address?\nIt's Pella, Anthony at Dahoo.com.\nIt's all one word.\nThanks so much for the verification, Anthony.\nYep.\nNow, you mentioned computer engineering, right?\nMm-hmm.\nOkay, may I ask what degree type were you looking to obtain instead of associate?\nWhatever I need to do.\nSo if I get in the first door, I do associate.\nIt's probably my way up the ladder, you know?\nOkay.\nGet my first one and then keep on going.\nSo it would be an associate degree for the moment?\nYep.\nAnthony, you've mentioned that you're 29 years old.\nAnd now if I may ask, what's the highest level of education?\nI dropped out when I was in the 11th grade and I started doing plumbing.\nI've actually been doing plumbing for 13 years.\nI'm a registered apprentice.\nI actually only have to take the test to become a journeyman.\nSo my own company.\nAnd I'm not too fond of plumbing, you know what I'm saying?\nI want to do something else besides plumbing for the rest of my life.\nOkay.\nAnd do you have a diploma or a GED?\nI have a GED.\nGED, okay.\nAnd what year did you obtain your GED?\n1999.\n1999.\nOkay.\nAnd for your class type preference, would it be online on campus?\nNo, probably be campus.\nProbably be campus.\nCampus.\nOkay.\nJust in case we're not able to find a campus based school, would you be okay with an online school?\nYeah.\nOkay.\nAnd are you a United States citizen?\nYes, I am.\nThank you.\nAnd are you associated with the United States military?\nWhat was that?\nOh, I'm sorry.\nAre you associated with the United States military?\nNo, I'm not.\nAnd what would be the best time for a school enrollment counselor to contact you,\nsit in the morning, afternoon or evening?\nPretty much any time of the day.\nAnd what is your exact date of birth?\n10, 15, 80.\nSo that would be October 15, 1980.\nThat's correct.\nOkay, Anthony, if we can find a school for you that meets your needs,\nschool enrollment counselors will be contacting you in the near future,\neither by phone or by e-mail.\nAnd they can answer any questions you may have,\nrecording financial aid, tuition assistance, their program requirements and policies.\nAnd so with that, I would just like to thank you for your time.\nThank you.\nAnd once again, we thank you for choosing education experts.\nAnd thank you.\nYou're welcome.\nAll right.\nGood day.\nYou too."
+  },
+  "miniLM": {
+    "predicted_outcome": "SUCCESS",
+    "success_probability": 0.6219,
+    "failure_probability": 0.3781,
+    "customer_intent": "Product information / evaluation",
+    "buying_signals": [
+      "product_interest",
+      "product_inquiry"
+    ],
+    "objections": []
+  },
+  "evidence": {
+    "product_reference": "",
+    "product_description": "phone",
+    "information_topics": []
+  },
+  "qwen": {
+    "status": "QWEN_FORMATTED_GROUNDED",
+    "model": "Qwen2.5-0.5B-Instruct Q4_K_M"
+  },
+  "qwen_manager_report": {
+    "sales_outcome": "SUCCESS",
+    "customer_situation": "Customer is seeking product information or evaluating the offering.",
+    "key_buying_signals": [
+      "product_interest",
+      "product_inquiry"
+    ],
+    "main_objections": [],
+    "what_went_well": [
+      "Customer showed specific interest by asking product-related questions."
+    ],
+    "what_needs_improvement": [],
+    "recommended_follow_up": [
+      "Follow up based on the customer's stated needs."
+    ]
+  }
+}

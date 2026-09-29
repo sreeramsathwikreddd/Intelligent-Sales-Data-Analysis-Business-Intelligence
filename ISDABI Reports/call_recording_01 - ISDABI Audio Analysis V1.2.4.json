@@ -1,0 +1,46 @@
+{
+  "project": "ISDABI",
+  "pipeline": "Audio -> Faster-Whisper -> MiniLM -> Structured Analysis -> Qwen",
+  "pipeline_version": "V1.2.4",
+  "audio_file": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI Dataset\\raw\\call_recording_01.wav",
+  "speech_to_text": {
+    "model": "Faster-Whisper Small",
+    "language": "en",
+    "transcript": "Hello, I'm Sarah Miller.\nI'm calling to inquire about the AC7892 air conditioner unit.\nI saw it on your website and I had a few questions.\nFirst, what's the BTU rating?\nAnd second, does it come with a remote control\nor is that sold separately?"
+  },
+  "miniLM": {
+    "predicted_outcome": "SUCCESS",
+    "success_probability": 0.8084,
+    "failure_probability": 0.1916,
+    "customer_intent": "Product information / evaluation",
+    "buying_signals": [
+      "product_inquiry",
+      "product_specification_interest"
+    ],
+    "objections": []
+  },
+  "qwen_manager_report": {
+    "predicted_outcome": "SUCCESS",
+    "success_probability": 0.8084,
+    "failure_probability": 0.1916,
+    "customer_intent": "Product information / evaluation",
+    "buying_signals": [
+      "product_inquiry",
+      "product_specification_interest"
+    ],
+    "objections": [],
+    "sales_outcome": "SUCCESS",
+    "customer_situation": "",
+    "key_buying_signals": [
+      "product_inquiry",
+      "product_specification_interest"
+    ],
+    "main_objections": [],
+    "what_went_well": [
+      "Customer asked specific questions about the product.",
+      "Customer asked about product specifications."
+    ],
+    "what_needs_improvement": [],
+    "recommended_follow_up": []
+  }
+}

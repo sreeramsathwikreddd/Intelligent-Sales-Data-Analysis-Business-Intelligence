@@ -1,0 +1,45 @@
+{
+  "project": "ISDABI",
+  "pipeline": "Audio -> Faster-Whisper -> MiniLM -> Evidence -> Qwen -> Grounding",
+  "pipeline_version": "V1.4.0",
+  "audio_file": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI AI ML\\temp_uploads\\ISDABI_AUDIO_3l2occ7l.wav",
+  "speech_to_text": {
+    "model": "Faster-Whisper Small",
+    "language": "en",
+    "transcript": "I'm calling to let you know that I'm very satisfied with the TV Ultra 4K 85 television\nI purchased.\nThis is Charles Evans and my order number is 135792.\nThe picture quality is stunning and the sound is excellent.\nIt has truly transformed my home theater experience.\nThank you for a great product and a smooth transaction."
+  },
+  "miniLM": {
+    "predicted_outcome": "FAILURE",
+    "success_probability": 0.4086,
+    "failure_probability": 0.5914,
+    "customer_intent": "Purchase intent",
+    "buying_signals": [
+      "purchase_interest"
+    ],
+    "objections": []
+  },
+  "evidence": {
+    "product_reference": "",
+    "product_description": "television",
+    "information_topics": []
+  },
+  "qwen": {
+    "status": "QWEN_FORMATTED_GROUNDED",
+    "model": "Qwen2.5-0.5B-Instruct Q4_K_M"
+  },
+  "qwen_manager_report": {
+    "sales_outcome": "FAILURE",
+    "customer_situation": "Customer is seeking product information or evaluating the offering.",
+    "key_buying_signals": [
+      "purchase_interest"
+    ],
+    "main_objections": [],
+    "what_went_well": [
+      "Customer expressed purchase-related interest."
+    ],
+    "what_needs_improvement": [],
+    "recommended_follow_up": [
+      "Follow up based on the customer's stated needs."
+    ]
+  }
+}

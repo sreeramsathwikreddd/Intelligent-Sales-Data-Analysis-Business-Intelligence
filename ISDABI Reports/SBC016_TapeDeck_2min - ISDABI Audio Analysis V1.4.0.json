@@ -1,0 +1,41 @@
+{
+  "project": "ISDABI",
+  "pipeline": "Audio -> Faster-Whisper -> MiniLM -> Evidence -> Qwen -> Grounding",
+  "pipeline_version": "V1.4.0",
+  "audio_file": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI Dataset\\raw\\external_tests\\SBC016_TapeDeck_2min.wav",
+  "speech_to_text": {
+    "model": "Faster-Whisper Small",
+    "language": "en",
+    "transcript": "Well, I wanted to say I'm really happy with the stuff I got now.\nGood, good.\nReally, basically, I'm back for a tape deck.\nOh, okay.\nSo, one of my thoughts is that, well, I want a tape deck that's going to sound about,\nyou know, as good as it can.\nOkay.\nAnd I think I want a tape deck with too many places for two tapes, so I can copy.\nOkay.\nI've never done this before.\nI know no much about tapes.\nOkay.\nI mean, I have a home box, you know, an ordinary tape thing.\nI wonder if you would suggest that this Luxman is one of the things you want me to think about?\nThe, would you, you would want the ability of the double cassette deck just purely for taping\nfrom one tape to the other?\nThat's its main purpose.\nThat's, in fact, I wouldn't know what other purpose it would have.\nOh, okay.\nThe other benefit is, is if you can load up two tapes in it, like, let's say,\n90-minute tapes of music, and you can set a switch on it where it will continually play\nall four sides of two tapes.\nThat's probably not going to happen.\nOkay.\nIt's mainly for copying.\nOkay.\nAnd the tapes you'd be copying, are they going to be straight music?\nMostly.\nOkay.\nOkay.\nSo, you are going to want or desire a pretty decent copy of your original tape.\nRight.\nOkay.\nAnd the originals will be from music lovers, you know, who probably have pretty good systems.\nOkay.\nAnd we're not talking strategy.\nSure.\nOkay.\nBecause on a tape deck like that, you realize that you're not going to be able to get a\ncopy that's, you know, as perfect as the original source was, or even as that tape was.\nThere's going to be some loss in the generation of making that copy.\nIs there a way to avoid that loss, Miho?"
+  },
+  "miniLM": {
+    "predicted_outcome": "SUCCESS",
+    "success_probability": 0.9043,
+    "failure_probability": 0.0957,
+    "customer_intent": "General inquiry",
+    "buying_signals": [],
+    "objections": []
+  },
+  "evidence": {
+    "product_reference": "",
+    "product_description": "",
+    "information_topics": []
+  },
+  "qwen": {
+    "status": "QWEN_FORMATTED_GROUNDED",
+    "model": "Qwen2.5-0.5B-Instruct Q4_K_M"
+  },
+  "qwen_manager_report": {
+    "sales_outcome": "SUCCESS",
+    "customer_situation": "Customer is making a general inquiry.",
+    "key_buying_signals": [],
+    "main_objections": [],
+    "what_went_well": [
+      "Customer clearly communicated their needs or questions."
+    ],
+    "what_needs_improvement": [],
+    "recommended_follow_up": [
+      "Follow up based on the customer's stated needs."
+    ]
+  }
+}

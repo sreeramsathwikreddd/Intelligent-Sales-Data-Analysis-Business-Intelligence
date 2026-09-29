@@ -1,0 +1,402 @@
+.step2-shell {
+  width: 100%;
+}
+
+.step2-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.step2-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.step2-panel {
+  min-width: 0;
+}
+
+.step2-card {
+  border: 1px solid var(--line, rgba(255, 255, 255, .08));
+  border-radius: 18px;
+  background: var(--surface, rgba(255, 255, 255, .025));
+  padding: 22px;
+}
+
+.step2-card h3 {
+  margin: 0 0 7px;
+}
+
+.step2-card p {
+  margin: 0;
+}
+
+.step2-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.step2-metric {
+  border: 1px solid var(--line, rgba(255, 255, 255, .08));
+  border-radius: 18px;
+  background: var(--surface, rgba(255, 255, 255, .025));
+  padding: 20px;
+}
+
+.step2-metric-label {
+  display: block;
+  font-size: .78rem;
+  opacity: .68;
+  margin-bottom: 8px;
+}
+
+.step2-metric-value {
+  display: block;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.step2-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.step2-list-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  padding: 11px 13px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .025);
+  border: 1px solid rgba(255, 255, 255, .055);
+}
+
+.step2-upload {
+  display: grid;
+  gap: 18px;
+}
+
+.step2-dropzone {
+  border: 1px dashed rgba(62, 216, 255, .42);
+  border-radius: 18px;
+  padding: 34px;
+  text-align: center;
+  background: rgba(40, 208, 255, .035);
+}
+
+.step2-dropzone input {
+  max-width: 100%;
+}
+
+.step2-file {
+  margin-top: 12px;
+  opacity: .78;
+  word-break: break-word;
+}
+
+.step2-progress {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  overflow: hidden;
+}
+
+.step2-progress > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent, #32d5f5);
+  transition: width .2s ease;
+}
+
+.step2-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line, rgba(255, 255, 255, .08));
+  border-radius: 18px;
+}
+
+.step2-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.step2-table th,
+.step2-table td {
+  padding: 15px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, .06);
+  vertical-align: middle;
+}
+
+.step2-table th {
+  font-size: .76rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  opacity: .62;
+}
+
+.step2-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.step2-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.step2-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: .78rem;
+  border: 1px solid rgba(255, 255, 255, .09);
+}
+
+.step2-status.active {
+  color: var(--success, #59d39c);
+}
+
+.step2-status.disabled {
+  opacity: .62;
+}
+
+.step2-search {
+  max-width: 360px;
+}
+
+.step2-error {
+  margin-top: 12px;
+  color: var(--danger, #ff7272);
+}
+
+.step2-success {
+  margin-top: 12px;
+  color: var(--success, #59d39c);
+}
+
+@media (max-width: 900px) {
+  .step2-grid,
+  .step2-metric-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step2-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .step2-search {
+    max-width: none;
+  }
+}
+
+/* Version 04: horizontal role report list */
+
+.step2-report-list {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--line, rgba(255, 255, 255, .08));
+  border-radius: 18px;
+  background: var(--surface, rgba(255, 255, 255, .018));
+}
+
+.step2-report-list-head,
+.step2-report-row {
+  display: grid;
+  grid-template-columns:
+    minmax(220px, 1.8fr)
+    minmax(170px, 1.15fr)
+    minmax(145px, .95fr)
+    minmax(90px, .6fr)
+    minmax(115px, .75fr)
+    minmax(155px, 1fr);
+  gap: 0;
+  align-items: center;
+  min-width: 1050px;
+}
+
+.step2-report-list-head {
+  padding: 0 18px;
+  min-height: 42px;
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+  color: var(--text-tertiary, #8a93a5);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.step2-report-list-body {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step2-report-row {
+  min-height: 82px;
+  padding: 11px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, .055);
+  transition: background .18s ease;
+}
+
+.step2-report-row:last-child {
+  border-bottom: 0;
+}
+
+.step2-report-row:hover {
+  background: rgba(255, 255, 255, .025);
+}
+
+.step2-report-main,
+.step2-report-owner {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+  padding-right: 18px;
+}
+
+.step2-report-main strong,
+.step2-report-owner strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.step2-report-main span,
+.step2-report-owner span,
+.step2-report-cell {
+  color: var(--text-tertiary, #8a93a5);
+  font-size: .78rem;
+}
+
+.step2-report-owner span {
+  text-transform: capitalize;
+}
+
+.step2-report-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.step2-report-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: max-content;
+  padding: 6px 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .09);
+  font-size: .76rem;
+  white-space: nowrap;
+}
+
+.step2-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.step2-report-status.status-uploaded {
+  color: #72cfff;
+}
+
+.step2-report-status.status-queued,
+.step2-report-status.status-processing {
+  color: #e7b85a;
+}
+
+.step2-report-status.status-completed {
+  color: var(--success, #59d39c);
+}
+
+.step2-report-status.status-failed {
+  color: var(--danger, #ff7272);
+}
+
+.step2-upload-success {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 15px;
+  border: 1px solid rgba(89, 211, 156, .22);
+  border-radius: 14px;
+  background: rgba(89, 211, 156, .045);
+}
+
+.step2-upload-success > div {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.step2-upload-success > div span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-tertiary, #8a93a5);
+  font-size: .8rem;
+}
+
+@media (max-width: 1100px) {
+  .step2-report-list-head,
+  .step2-report-row {
+    min-width: 980px;
+  }
+}
+
+@media (max-width: 640px) {
+  .step2-report-list {
+    border-radius: 14px;
+  }
+}
+
+/* ============================================================
+   ISDABI REPORT ACTIONS — SINGLE HORIZONTAL ROW
+   ============================================================ */
+
+.step2-report-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 8px;
+  min-width: 0;
+}
+
+.step2-report-actions > .btn {
+  width: 100%;
+  min-width: 0;
+  justify-content: center;
+}
+
+.step2-report-actions > .btn:only-child {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   ISDABI UPLOAD ICON — COMPACT SIZE
+   ============================================================ */
+
+.step2-file-icon svg {
+  width: 20px !important;
+  height: 20px !important;
+  max-width: 20px;
+  max-height: 20px;
+}

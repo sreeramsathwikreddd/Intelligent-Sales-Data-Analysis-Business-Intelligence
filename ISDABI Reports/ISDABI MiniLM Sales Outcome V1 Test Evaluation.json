@@ -1,0 +1,31 @@
+{
+  "model": "MiniLM-L12-H384-uncased",
+  "task": "SUCCESS vs FAILURE",
+  "training_records": 9598,
+  "testing_records": 2399,
+  "epochs": 3,
+  "device": "cpu",
+  "metrics": {
+    "accuracy": 0.7674030846185911,
+    "precision_success": 0.5591397849462365,
+    "recall_success": 0.7123287671232876,
+    "f1_success": 0.6265060240963856
+  },
+  "confusion_matrix": {
+    "labels": [
+      "FAILURE",
+      "SUCCESS"
+    ],
+    "matrix": [
+      [
+        1373,
+        369
+      ],
+      [
+        189,
+        468
+      ]
+    ]
+  },
+  "classification_report": "              precision    recall  f1-score   support\n\n     FAILURE       0.88      0.79      0.83      1742\n     SUCCESS       0.56      0.71      0.63       657\n\n    accuracy                           0.77      2399\n   macro avg       0.72      0.75      0.73      2399\nweighted avg       0.79      0.77      0.78      2399\n"
+}

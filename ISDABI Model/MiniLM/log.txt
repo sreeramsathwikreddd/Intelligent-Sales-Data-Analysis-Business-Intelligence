@@ -1,0 +1,55 @@
+INFO:transformers.configuration_utils:loading configuration file ../../MiniLM-L12-H384-uncased/config.json
+INFO:transformers.configuration_utils:Model config BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 384,
+  "initializer_range": 0.02,
+  "intermediate_size": 1536,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+INFO:transformers.modeling_utils:loading weights file ../../MiniLM-L12-H384-uncased/pytorch_model.bin
+INFO:transformers.configuration_utils:loading configuration file ../../MiniLM-L12-H384-uncased/config.json
+INFO:transformers.configuration_utils:Model config BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 384,
+  "initializer_range": 0.02,
+  "intermediate_size": 1536,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "type_vocab_size": 2,
+  "vocab_size": 30522
+}
+
+INFO:transformers.modeling_tf_utils:loading weights file ../../MiniLM-L12-H384-uncased/pytorch_model.bin
+INFO:transformers.modeling_tf_pytorch_utils:Loading PyTorch weights from /home/patrick/hugging_face/models/MiniLM-L12-H384-uncased/pytorch_model.bin
+INFO:transformers.modeling_tf_pytorch_utils:PyTorch checkpoint contains 45,260,348 parameters
+INFO:transformers.modeling_tf_pytorch_utils:Loaded 33,360,000 parameters in the TF 2.0 model.
+INFO:transformers.modeling_tf_pytorch_utils:Weights or buffers not loaded from PyTorch model: {'cls.seq_relationship.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.bias', 'cls.predictions.decoder.weight'}
+INFO:transformers.configuration_utils:Configuration saved in ./config.json
+INFO:transformers.modeling_utils:Model weights saved in ./pytorch_model.bin
+INFO:transformers.configuration_utils:Configuration saved in ./config.json
+INFO:transformers.modeling_tf_utils:Model weights saved in ./tf_model.h5
+INFO:transformers.tokenization_utils_base:Model name '../../MiniLM-L12-H384-uncased/' not found in model shortcut name list (bert-base-uncased, bert-large-uncased, bert-base-cased, bert-large-cased, bert-base-multilingual-uncased, bert-base-multilingual-cased, bert-base-chinese, bert-base-german-cased, bert-large-uncased-whole-word-masking, bert-large-cased-whole-word-masking, bert-large-uncased-whole-word-masking-finetuned-squad, bert-large-cased-whole-word-masking-finetuned-squad, bert-base-cased-finetuned-mrpc, bert-base-german-dbmdz-cased, bert-base-german-dbmdz-uncased, TurkuNLP/bert-base-finnish-cased-v1, TurkuNLP/bert-base-finnish-uncased-v1, wietsedv/bert-base-dutch-cased). Assuming '../../MiniLM-L12-H384-uncased/' is a path, a model identifier, or url to a directory containing tokenizer files.
+INFO:transformers.tokenization_utils_base:Didn't find file ../../MiniLM-L12-H384-uncased/added_tokens.json. We won't load it.
+INFO:transformers.tokenization_utils_base:Didn't find file ../../MiniLM-L12-H384-uncased/special_tokens_map.json. We won't load it.
+INFO:transformers.tokenization_utils_base:Didn't find file ../../MiniLM-L12-H384-uncased/tokenizer_config.json. We won't load it.
+INFO:transformers.tokenization_utils_base:loading file ../../MiniLM-L12-H384-uncased/vocab.txt
+INFO:transformers.tokenization_utils_base:loading file None
+INFO:transformers.tokenization_utils_base:loading file None
+INFO:transformers.tokenization_utils_base:loading file None
+WARNING:transformers.tokenization_bert:Saving vocabulary to ./vocab.txt: vocabulary indices are not consecutive. Please check that the vocabulary is not corrupted!

@@ -1,0 +1,52 @@
+{
+  "project": "ISDABI",
+  "pipeline": "Audio -> Faster-Whisper -> MiniLM -> Evidence -> Qwen -> Grounding",
+  "pipeline_version": "V1.4.0",
+  "audio_file": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI AI ML\\temp_uploads\\ISDABI_AUDIO__6hwx2mx.wav",
+  "speech_to_text": {
+    "model": "Faster-Whisper Small",
+    "language": "en",
+    "transcript": "Hello, I'm Sarah Miller.\nI'm calling to inquire about the AC7892 air conditioner unit.\nI saw it on your website and I had a few questions.\nFirst, what's the BTU rating?\nAnd second, does it come with a remote control\nor is that sold separately?"
+  },
+  "miniLM": {
+    "predicted_outcome": "SUCCESS",
+    "success_probability": 0.8084,
+    "failure_probability": 0.1916,
+    "customer_intent": "Product information / evaluation",
+    "buying_signals": [
+      "product_inquiry",
+      "product_specification_interest"
+    ],
+    "objections": []
+  },
+  "evidence": {
+    "product_reference": "AC7892",
+    "product_description": "air conditioner",
+    "information_topics": [
+      "btu_rating",
+      "remote_control",
+      "specifications"
+    ]
+  },
+  "qwen": {
+    "status": "QWEN_FORMATTED_GROUNDED",
+    "model": "Qwen2.5-0.5B-Instruct Q4_K_M"
+  },
+  "qwen_manager_report": {
+    "sales_outcome": "SUCCESS",
+    "customer_situation": "Customer is asking about the AC7892 air conditioner, specifically its BTU rating and whether it comes with a remote control.",
+    "key_buying_signals": [
+      "product_inquiry",
+      "product_specification_interest"
+    ],
+    "main_objections": [],
+    "what_went_well": [
+      "Customer showed specific interest by asking product-related questions.",
+      "Customer asked for specific product specifications or features."
+    ],
+    "what_needs_improvement": [],
+    "recommended_follow_up": [
+      "Follow up by addressing the customer's stated product questions."
+    ]
+  }
+}

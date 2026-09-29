@@ -1,0 +1,113 @@
+{
+  "version": "V1.2.1",
+  "evaluation_type": "Corrected aggregation of existing testing evaluation JSONL",
+  "input_file": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI Reports\\ISDABI Sales Testing Evaluation V1.2.1.jsonl",
+  "output_jsonl": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI Reports\\ISDABI Sales Testing Evaluation V1.2.1 Corrected.jsonl",
+  "output_summary": "A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI Reports\\ISDABI Sales Testing Evaluation V1.2.1 Corrected Summary.json",
+  "conversations_analyzed": 2399,
+  "actual_dataset_outcomes": {
+    "FAILURE": 1742,
+    "SUCCESS": 657
+  },
+  "overall": {
+    "intent": {
+      "Moderate purchase intent": 750,
+      "Low purchase intent": 584,
+      "Very high purchase intent": 449,
+      "Information seeking": 380,
+      "High purchase intent": 219,
+      "Potential purchase interest": 17
+    },
+    "sentiment": {
+      "Concerned": 1993,
+      "Negative": 289,
+      "Positive": 90,
+      "Neutral": 27
+    },
+    "engagement": {
+      "UNKNOWN": 2399
+    },
+    "decision_point": {
+      "Hesitation": 1703,
+      "Ready to buy": 444,
+      "Information gathering": 251,
+      "Follow-up requested": 1
+    },
+    "objection_handling": {
+      "Handled": 1734,
+      "No clear objection detected": 277,
+      "Partially handled": 265,
+      "Not handled": 123
+    },
+    "average_buying_signals": 1.2334305960817007,
+    "average_objections": 1.4280950395998333
+  },
+  "by_actual_outcome": {
+    "FAILURE": {
+      "count": 1742,
+      "intent": {
+        "Moderate purchase intent": 671,
+        "Low purchase intent": 567,
+        "Information seeking": 374,
+        "High purchase intent": 94,
+        "Very high purchase intent": 19,
+        "Potential purchase interest": 17
+      },
+      "sentiment": {
+        "Concerned": 1519,
+        "Negative": 209,
+        "Positive": 10,
+        "Neutral": 4
+      },
+      "engagement": {
+        "UNKNOWN": 1742
+      },
+      "decision_point": {
+        "Hesitation": 1695,
+        "Information gathering": 33,
+        "Ready to buy": 14
+      },
+      "objection_handling": {
+        "Handled": 1241,
+        "No clear objection detected": 206,
+        "Partially handled": 201,
+        "Not handled": 94
+      },
+      "average_buying_signals": 1.0063145809414467,
+      "average_objections": 1.4546498277841562
+    },
+    "SUCCESS": {
+      "count": 657,
+      "intent": {
+        "Very high purchase intent": 430,
+        "High purchase intent": 125,
+        "Moderate purchase intent": 79,
+        "Low purchase intent": 17,
+        "Information seeking": 6
+      },
+      "sentiment": {
+        "Concerned": 474,
+        "Negative": 80,
+        "Positive": 80,
+        "Neutral": 23
+      },
+      "engagement": {
+        "UNKNOWN": 657
+      },
+      "decision_point": {
+        "Ready to buy": 430,
+        "Information gathering": 218,
+        "Hesitation": 8,
+        "Follow-up requested": 1
+      },
+      "objection_handling": {
+        "Handled": 493,
+        "No clear objection detected": 71,
+        "Partially handled": 64,
+        "Not handled": 29
+      },
+      "average_buying_signals": 1.8356164383561644,
+      "average_objections": 1.3576864535768645
+    }
+  }
+}

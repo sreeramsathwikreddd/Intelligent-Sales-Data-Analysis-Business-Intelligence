@@ -1,0 +1,108 @@
+﻿# ================================
+# Dependencies / environments
+# ================================
+node_modules/
+**/node_modules/
+.venv/
+**/.venv/
+venv/
+**/venv/
+env/
+**/env/
+__pycache__/
+**/__pycache__/
+*.pyc
+**/python_packages/
+
+# ================================
+# Environment / secrets
+# ================================
+.env
+.env.*
+!.env.example
+
+# ================================
+# Build / cache / logs
+# ================================
+.vite/
+**/.vite/
+.cache/
+**/.cache/
+dist/
+**/dist/
+build/
+**/build/
+*.log
+
+# ================================
+# Local audio / uploaded recordings
+# ================================
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+**/uploads/
+**/temp_uploads/
+
+# ================================
+# Large ML / model binaries
+# ================================
+*.gguf
+*.pt
+*.pth
+*.onnx
+*.bin
+*.safetensors
+*.ckpt
+*.h5
+*.msgpack
+*.pkl
+
+# ================================
+# Native runtime binaries
+# ================================
+*.dll
+*.exe
+
+# ================================
+# Local model/runtime directories
+# ================================
+**/huggingface/
+**/models/
+**/checkpoints/
+**/llama.cpp/
+
+# ================================
+# Temporary / backup files
+# ================================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.swp
+*.swo
+
+# ================================
+# IDE / OS
+# ================================
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# ================================
+# Archives
+# ================================
+*.zip
+*.7z
+*.rar
+# Existing rules...
+
+# Backup / previous-version files
+*.backup*
+*.before-*
+
+# GitHub 100 MB limit
+ISDABI Reports/ISDABI Sales Training Analysis V1.2.1.jsonl

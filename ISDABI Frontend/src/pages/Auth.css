@@ -1,0 +1,480 @@
+﻿.auth-page { min-height: 100dvh; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: #07090c; }
+.auth-brand { display: flex; flex-direction: column; justify-content: space-between; gap: 40px; padding: 44px 52px; background: #07090c; color: #b9b5ad; }
+.auth-brand .brand-mark { color: #f8f3eb; }
+.auth-brand h2 { max-width: 420px; font-size: 32px; line-height: 1.18; font-weight: 700; letter-spacing: -.045em; color: #f8f3eb; }
+.auth-brand ul { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; font-size: 14.5px; }
+.auth-brand li { position: relative; padding-left: 22px; }
+.auth-brand li::before { content: ''; position: absolute; left: 0; top: .62em; width: 8px; height: 8px; border-radius: 50%; background: #42d9f5; box-shadow: 0 0 12px rgba(66,217,245,.32); }
+.auth-brand-foot { font-size: 12.5px; color: #6e7373; }
+.auth-main { display: grid; place-items: center; padding: 32px 24px; }
+.auth-card { width: 100%; max-width: 430px; padding: 34px; border-radius: 28px; background: linear-gradient(145deg, rgba(25,27,29,.78), rgba(12,14,17,.91)); border: 1px solid rgba(236,226,208,.15); box-shadow: 0 30px 90px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+.auth-mobile-brand { display: none; margin-bottom: 28px; }
+.auth-mobile-brand .brand-mark { color: #f8f2e8; }
+.auth-mobile-brand .brand-sub { color: #777b7b; }
+.auth-title { font-size: 29px; font-weight: 700; letter-spacing: -.045em; margin-bottom: 4px; color: #faf5ed; }
+.auth-sub { color: #9b9a96; margin-bottom: 28px; font-size: 14.5px; }
+.auth-btn { width: 100%; margin-top: 22px; background: #42d9f5 !important; color: #061014 !important; border: 1px solid rgba(66,217,245,.60) !important; }
+.auth-error { margin-top: 14px; }
+.auth-footer { text-align: center; margin-top: 26px; font-size: 13.5px; color: #777b7b; }
+.auth-footer a { color: #42d9f5; font-weight: 600; }
+@media (max-width: 859px) { .auth-page { grid-template-columns: 1fr; } .auth-brand { display: none; } .auth-mobile-brand { display: block; } .auth-main { align-items: start; padding: max(48px, env(safe-area-inset-top)) 16px 32px; } .auth-card { padding: 26px 20px; border-radius: 24px; } }
+
+.auth-google-btn {
+  width: 100%;
+  margin-top: 12px;
+  min-height: 46px;
+  border-radius: 12px;
+  border: 1px solid rgba(236,226,208,.18);
+  background: rgba(255,255,255,.04);
+  color: #f8f3eb;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.auth-google-btn:hover:not(:disabled) {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(66,217,245,.45);
+}
+
+.auth-google-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+.auth-google-shell {
+  position: relative;
+  width: 100%;
+  height: 46px;
+  margin-top: 14px;
+}
+
+.auth-google-btn {
+  width: 100%;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(67, 210, 244, 0.34);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.025);
+  color: #f4f8fb;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.auth-google-btn:hover {
+  border-color: rgba(67, 210, 244, 0.7);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.auth-google-btn:active {
+  transform: translateY(1px);
+}
+
+.auth-google-icon {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: #4285f4;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.auth-google-official {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.auth-google-official > div,
+.auth-google-official iframe {
+  width: 100% !important;
+  height: 46px !important;
+}
+
+.auth-google-loading {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(232, 240, 245, 0.55);
+}
+
+.google-role-overlay,
+.account-delete-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(4, 8, 12, 0.78);
+  backdrop-filter: blur(12px);
+}
+
+.google-role-dialog,
+.account-delete-dialog {
+  width: min(460px, 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #11181d, #0b1014);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+  padding: 28px;
+}
+
+.google-role-dialog h2,
+.account-delete-dialog h2 {
+  margin: 0 0 8px;
+  color: #f5f8fa;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.google-role-dialog p,
+.account-delete-dialog p {
+  margin: 0;
+  color: rgba(229, 238, 243, 0.64);
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.google-role-account {
+  display: grid;
+  gap: 3px;
+  margin: 20px 0 16px;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.google-role-account strong {
+  color: #f4f8fb;
+  font-size: 14px;
+}
+
+.google-role-account span {
+  color: rgba(229, 238, 243, 0.5);
+  font-size: 12px;
+}
+
+.google-role-options {
+  display: grid;
+  gap: 10px;
+}
+
+.google-role-option {
+  width: 100%;
+  display: grid;
+  gap: 4px;
+  text-align: left;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  color: inherit;
+  cursor: pointer;
+}
+
+.google-role-option.selected {
+  border-color: rgba(66, 210, 244, 0.72);
+  background: rgba(66, 210, 244, 0.08);
+}
+
+.google-role-option-title {
+  color: #f5f8fa;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.google-role-option-text {
+  color: rgba(229, 238, 243, 0.52);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.google-role-actions,
+.account-delete-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.google-role-cancel,
+.google-role-continue,
+.account-delete-cancel,
+.account-delete-confirm,
+.account-delete-button {
+  min-height: 42px;
+  border-radius: 11px;
+  padding: 0 16px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.google-role-cancel,
+.account-delete-cancel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: rgba(240, 246, 249, 0.72);
+}
+
+.google-role-continue {
+  border: 1px solid #42d2f4;
+  background: #42d2f4;
+  color: #071015;
+}
+
+.account-danger-zone {
+  margin-top: 24px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid rgba(255, 91, 91, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 91, 91, 0.035);
+}
+
+.account-danger-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(255, 117, 117, 0.78);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.account-danger-zone h3 {
+  margin: 0 0 5px;
+  color: #f5f8fa;
+  font-size: 17px;
+}
+
+.account-danger-zone p {
+  margin: 0;
+  max-width: 620px;
+  color: rgba(229, 238, 243, 0.52);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.account-delete-button,
+.account-delete-confirm {
+  border: 1px solid rgba(255, 91, 91, 0.5);
+  background: rgba(255, 91, 91, 0.1);
+  color: #ff9a9a;
+}
+
+.account-delete-dialog {
+  max-width: 430px;
+}
+
+.account-delete-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 91, 91, 0.1);
+  color: #ff8585;
+  font-weight: 900;
+}
+
+.account-delete-dialog label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  color: rgba(240, 246, 249, 0.72);
+  font-size: 12px;
+}
+
+.account-delete-input {
+  width: 100%;
+  height: 44px;
+  padding: 0 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 11px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.035);
+  color: #f5f8fa;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.account-delete-input:focus {
+  border-color: rgba(255, 91, 91, 0.55);
+}
+
+.account-delete-error {
+  margin-top: 9px;
+  color: #ff9a9a;
+  font-size: 12px;
+}
+
+.account-delete-confirm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .account-danger-zone {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .account-delete-button {
+    width: 100%;
+  }
+
+  .google-role-dialog,
+  .account-delete-dialog {
+    padding: 22px;
+    border-radius: 20px;
+  }
+}
+
+/* ISDABI Settings UI spacing fix */
+.account-danger-zone {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 24px 22px;
+  gap: 24px;
+}
+
+.account-danger-zone > div:first-child {
+  min-width: 0;
+  flex: 1 1 auto;
+  padding-right: 8px;
+}
+
+.account-danger-zone h3 {
+  margin: 0 0 7px;
+  line-height: 1.3;
+}
+
+.account-danger-zone p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.account-delete-button {
+  flex: 0 0 auto;
+  min-width: 140px;
+  width: 140px;
+  height: 46px;
+  padding: 0 18px;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow: hidden;
+  text-overflow: clip;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .account-danger-zone {
+    padding: 22px;
+    gap: 16px;
+  }
+
+  .account-danger-zone > div:first-child {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .account-delete-button {
+    width: 100%;
+    min-width: 140px;
+    white-space: nowrap;
+  }
+}
+
+/* ISDABI Settings account-row spacing fix */
+.account-info,
+.settings-account,
+.settings-card,
+.account-card {
+  box-sizing: border-box;
+}
+
+.account-info > *,
+.settings-account > *,
+.settings-card > *,
+.account-card > * {
+  box-sizing: border-box;
+}
+
+.account-info [class*="row"],
+.settings-account [class*="row"],
+.settings-card [class*="row"],
+.account-card [class*="row"] {
+  padding-left: 18px;
+  padding-right: 18px;
+  box-sizing: border-box;
+}
+
+.account-info [class*="value"],
+.settings-account [class*="value"],
+.settings-card [class*="value"],
+.account-card [class*="value"] {
+  min-width: 0;
+  padding-left: 18px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+  .account-info [class*="row"],
+  .settings-account [class*="row"],
+  .settings-card [class*="row"],
+  .account-card [class*="row"] {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .account-info [class*="value"],
+  .settings-account [class*="value"],
+  .settings-card [class*="value"],
+  .account-card [class*="value"] {
+    padding-left: 12px;
+  }
+}
+
+
+
+/* Google role dialog UI correction */
+.google-role-mark {
+  display: none !important;
+}
+
+.google-role-dialog h2 {
+  margin-top: 0;
+}
+
+.google-role-actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  width: 100% !important;
+  gap: 12px !important;
+  margin-top: 22px !important;
+}
+
+.google-role-cancel,
+.google-role-continue {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}

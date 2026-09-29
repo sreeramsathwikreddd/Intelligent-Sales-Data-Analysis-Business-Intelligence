@@ -1,0 +1,49 @@
+{
+  "project": "ISDABI",
+  "pipeline": "MiniLM Fine-Tuned + Structured Analysis + Qwen",
+  "conversation_id": 1323,
+  "miniLM": {
+    "predicted_outcome": "SUCCESS",
+    "success_probability": 0.998,
+    "failure_probability": 0.002,
+    "buying_signals": [
+      "purchase_interest",
+      "membership_interest",
+      "price_evaluation",
+      "commitment"
+    ],
+    "objections": [
+      "price_objection",
+      "time_objection",
+      "commitment_objection",
+      "uncertainty"
+    ]
+  },
+  "manager_report": "Loading model... \n\n▄▄ ▄▄\n██ ██\n██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄\n██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██\n██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀\n                                    ██    ██\n                                    ▀▀    ▀▀\n\nbuild      : b11060-426090367\nmodel      : A:\\5.Projects & Information\\16.Intelligent Sales Data Analysis & Business Intelligence\\ISDABI Model\\Qwen\\qwen2.5-0.5b-instruct-q4_k_m.gguf\nftype      : Q4_K - Medium\nmodalities : text\n\navailable commands:\n  /exit or Ctrl+C     stop or exit\n  /regen              regenerate the last response\n  /clear              clear the chat history\n  /read <file>        add a text file\n  /glob <pattern>     add text files using globbing pattern\n\n\n\n> \nYou are an experienced sales manager.\n\nCreate a concise professional sales-call report from the\nAI analysis and conversation below.\n\nAI ANALYSIS:\n\n{\n  \"predicted_outcome\": \"SUCCESS\",\n  \"success_probability\": 0.998,\n  \"failure_probability\": 0.002,\n  \"buying_signals\": [\n    \"purchase_interest\",\n    \"membership_interest\",\n    \"price_evaluation\",\n    \"commitment\"\n  ],\n  \"objections\": [\n    \"price_objection\",\n    \"time_objection\",\n    \"commitment_objection\",\n    \"uncertainty\"\n  ]\n}\n\nCONVERSATION:\n\nS ... (truncated)\nSales Outcome: SUCCESS\n\nCustomer Situation: The customer is interested in joining and has clear concerns about the commitment period and monthly rate.\n\nKey Buying Signals:\n\n1. Purchase Interest\n2. Membership Interest\n3. Price Evaluation\n4. Commitment\n\nMain Objections:\n\n1. Price Objection\n2. Time Objection\n3. Commitment Objection\n4. Uncertainty\n\nWhat Went Well:\n\n1. The customer is clearly interested in joining.\n2. The customer is aware of the commitment period and monthly price.\n3. The customer is not concerned about the commitment period but is concerned about the monthly price.\n\nWhat Needs Improvement:\n\n1. The customer is not sure if they will be eligible for a commitment period.\n2. The customer is not sure if the monthly price will remain the same after the first 12 months.\n\nRecommended Follow-up:\n\n1. To confirm if the customer will be eligible for a commitment period.\n2. To explain the commitment period and monthly price to the customer.\n3. To offer additional services if the customer is uncertain about the commitment period.\n\n\nExiting...",
+  "conversation": [
+    {
+      "role": "sales",
+      "text": "Sure, tell me a bit more about why you're interested in joining now? Are you looking for a particular feature or just exploring options?"
+    },
+    {
+      "role": "customer",
+      "text": "Thanks for asking, but to be honest, I’ve been considering this option for a while now and just wanted to explore all my concerns first before making a decision. Specifically, I'm curious if there's a commitment period and how the monthly rate might change come renewal time."
+    },
+    {
+      "role": "sales",
+      "text": "Great approach! There’s no commitment period, and the monthly price is fixed for the first 12 months from your join date without any changes. After that, we offer a 12-month plan that’s 15% off. Let’s go over your questions now."
+    },
+    {
+      "role": "customer",
+      "text": "That sounds reasonable. So, do you have details on the registration fee, card fee, and locker fee? Those can add up quickly, especially since the sticker price doesn’t always reflect everything."
+    },
+    {
+      "role": "sales",
+      "text": "Absolutely, you’re right. There’s no registration fee, card fee, or locker fee here. The monthly price includes everything—no hidden extras. How does that sound to you?"
+    },
+    {
+      "role": "customer",
+      "text": "Great, that clears up all my concerns. I think I'll go ahead and join then."
+    }
+  ]
+}

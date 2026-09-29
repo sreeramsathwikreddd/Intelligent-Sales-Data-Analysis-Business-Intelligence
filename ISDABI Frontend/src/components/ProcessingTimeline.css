@@ -1,0 +1,334 @@
+/* ============================================================
+   ISDABI - Call Analysis Processing Timeline
+   Cyan / Ash / Black
+   ============================================================ */
+
+   .ca-card {
+    --ca-cyan: #42d9f5;
+    --ca-ink: #061014;
+    --ca-text: #e9edef;
+    --ca-ash: #8b9399;
+    --ca-dim: #5f676c;
+    --ca-line: rgba(255, 255, 255, 0.1);
+    --ca-fail: #e5867a;
+  
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 28px 28px 22px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 20px;
+  
+    background: linear-gradient(
+      180deg,
+      rgba(16, 20, 24, 0.97),
+      rgba(8, 10, 13, 0.99)
+    );
+  
+    color: var(--ca-text);
+  }
+  
+  .ca-head {
+    text-align: center;
+  }
+  
+  .ca-eyebrow {
+    margin: 0 0 8px;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ca-ash);
+  }
+  
+  .ca-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--ca-text);
+  }
+  
+  .ca-file {
+    max-width: 100%;
+    margin: 6px auto 0;
+    font-size: 13.5px;
+    color: var(--ca-ash);
+  }
+  
+  .ca-bar {
+    height: 3px;
+    margin: 22px 0 14px;
+    overflow: hidden;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  .ca-bar-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--ca-cyan);
+    transform-origin: left center;
+  
+    transition:
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.3s ease;
+  }
+  
+  .ca-bar.is-failed .ca-bar-fill {
+    background: var(--ca-fail);
+  }
+  
+  .ca-steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .ca-row {
+    position: relative;
+  
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr) auto;
+    align-items: center;
+  
+    gap: 14px;
+    padding: 10px 12px;
+  
+    border-radius: 12px;
+  
+    font-size: 14.5px;
+    color: var(--ca-dim);
+  
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  .ca-row.is-done {
+    color: var(--ca-ash);
+  }
+  
+  .ca-row.is-active {
+    color: var(--ca-text);
+    font-weight: 550;
+  
+    background: rgba(66, 217, 245, 0.06);
+  
+    box-shadow:
+      inset 0 0 0 1px rgba(66, 217, 245, 0.2);
+  }
+  
+  .ca-row.is-failed {
+    color: var(--ca-fail);
+    font-weight: 550;
+  }
+  
+  .ca-row:not(:last-child)::before,
+  .ca-row:not(:last-child)::after {
+    content: '';
+  
+    position: absolute;
+  
+    left: 23px;
+    top: calc(50% + 12px);
+  
+    width: 2px;
+    height: calc(100% - 24px);
+  
+    border-radius: 2px;
+  }
+  
+  .ca-row:not(:last-child)::after {
+    background: var(--ca-line);
+  }
+  
+  .ca-row:not(:last-child)::before {
+    z-index: 1;
+  
+    background: var(--ca-cyan);
+    opacity: 0.55;
+  
+    transform: scaleY(0);
+    transform-origin: top;
+  
+    transition: transform 0.5s ease;
+  }
+  
+  .ca-row.is-done:not(:last-child)::before {
+    transform: scaleY(1);
+  }
+  
+  .ca-node {
+    position: relative;
+    z-index: 2;
+  
+    width: 24px;
+    height: 24px;
+  
+    display: grid;
+    place-items: center;
+  
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+  
+    background: #0b0e12;
+  
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  .ca-node svg {
+    width: 13px;
+    height: 13px;
+  }
+  
+  .ca-node.is-done {
+    border-color: var(--ca-cyan);
+    background: var(--ca-cyan);
+    color: var(--ca-ink);
+  }
+  
+  .ca-node.is-active {
+    border-color: var(--ca-cyan);
+    animation: ca-pulse 2s ease-out infinite;
+  }
+  
+  .ca-node.is-failed {
+    border-color: var(--ca-fail);
+    background: var(--ca-fail);
+    color: var(--ca-ink);
+  }
+  
+  .ca-spin {
+    width: 11px;
+    height: 11px;
+  
+    border: 2px solid var(--ca-cyan);
+    border-right-color: transparent;
+  
+    border-radius: 50%;
+  
+    animation: ca-spin 0.8s linear infinite;
+  }
+  
+  .ca-label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  
+  .ca-hint {
+    font-size: 12.5px;
+    white-space: nowrap;
+    color: var(--ca-dim);
+  }
+  
+  .ca-row.is-active .ca-hint {
+    color: var(--ca-cyan);
+  }
+  
+  .ca-row.is-failed .ca-hint {
+    color: var(--ca-fail);
+  }
+  
+  .ca-note {
+    display: flex;
+    align-items: flex-start;
+  
+    gap: 10px;
+  
+    margin-top: 16px;
+    padding: 12px 14px;
+  
+    border: 1px solid var(--ca-line);
+    border-radius: 12px;
+  
+    background: rgba(255, 255, 255, 0.03);
+  
+    font-size: 13px;
+    line-height: 1.45;
+  
+    color: var(--ca-ash);
+  }
+  
+  .ca-note svg {
+    flex: none;
+  
+    width: 17px;
+    height: 17px;
+  
+    margin-top: 1px;
+  }
+  
+  .ca-note.is-error {
+    border-color: rgba(229, 134, 122, 0.35);
+    background: rgba(229, 134, 122, 0.07);
+    color: #f0b3aa;
+  }
+  
+  @keyframes ca-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes ca-pulse {
+    0% {
+      box-shadow:
+        0 0 0 0 rgba(66, 217, 245, 0.3);
+    }
+  
+    70%,
+    100% {
+      box-shadow:
+        0 0 0 7px rgba(66, 217, 245, 0);
+    }
+  }
+  
+  @media (max-width: 560px) {
+    .ca-card {
+      padding: 22px 14px 16px;
+      border-radius: 18px;
+    }
+  
+    .ca-title {
+      font-size: 18px;
+    }
+  
+    .ca-row {
+      gap: 12px;
+      padding: 9px 8px;
+      font-size: 14px;
+    }
+  
+    .ca-row:not(:last-child)::before,
+    .ca-row:not(:last-child)::after {
+      left: 19px;
+    }
+  
+    .ca-hint {
+      font-size: 12px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .ca-node.is-active {
+      animation: none;
+    }
+  
+    .ca-spin {
+      animation-duration: 2.4s;
+    }
+  
+    .ca-bar-fill,
+    .ca-row,
+    .ca-node,
+    .ca-row:not(:last-child)::before {
+      transition: none;
+    }
+  }
